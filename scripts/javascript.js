@@ -9,9 +9,28 @@
         3.5. очистити поле вводу
     4. функціонал виконаної задачі (ф-ція яка додає клас чекд або прибирає його)
     5. при натисканні на крестик - видалити елемент */
+/* 
+    Алгоритм зі сховищем
+    1. створити ключ для сховища
+    2. зберігати задачі у форматі: масив з обʼєктів вигляду: {
+        text: string,
+        isDone: boolean,
+        id: number
+    }
+    3. створимо змінну для ID
+    4. після натискання на кнопку едд викликати ф-цію, яка буде створювати обʼєкт задачі і потім додавати його в масив з локал стореджу
+    5. створимо дата-айді у кожної лішки при створенні
+    6. при кліку на лішку змінити статус в локалстореджі
+    7. при кліку на крестик видалити обʼєкт з локалстореджу
+    8. написати ф-цію, яка буде зчитувати задачі з локалстореджу і показувати їх користувачу на екрані */
 
 import refs from "./refs.js";
-import { addNewTask, handleTasksbehaviour } from "./functions.js";
+import {
+  addNewTask,
+  handleTasksbehaviour,
+  fillTasksList,
+} from "./functions.js";
 
 refs.addBtn.addEventListener("click", addNewTask);
 refs.myUL.addEventListener("click", handleTasksbehaviour);
+window.addEventListener("DOMContentLoaded", fillTasksList);
